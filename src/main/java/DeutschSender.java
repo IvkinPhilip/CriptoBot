@@ -11,11 +11,15 @@ class DeutschSender extends Information {
 
     @Override
     String getText(Model model) {
-        return "Die untere Grenze der Werkzeugkosten in dieser Kerze = " + model.getName() + "\n" +
-                "Die obere Grenze des Wertes des Instruments in dieser Kerze = " + model.getName() + "\n" +
-                "Der Preis des Instruments zum Zeitpunkt des Öffnens dieser Kerze = " + model.getName() + "\n" +
-                "Der Preis des Instruments am Ende dieser Kerze = " + model.getName() + "\n" +
-                "Die Öffnungszeit dieser Kerze = " + model.getName() + "\n";
+        return "häufigste symbol = " + model.getSymbol() + "\n" +
+                "eigenname für Asset = " + model.getName() + "\n" +
+                "verfügbares Angebot für den Handel = " + model.getSupply() + "\n" +
+                "gesamtmenge der ausgegebenen Vermögenswerte = " + model.getMaxSupply() + "\n" +
+                "supply x Preis = " + model.getMarketCapUsd() + "\n" +
+                "menge des in USD vertretenen Handelsvolumens in den letzten 24 Stunden = " + model.getVolumeUsd24Hr() + "\n" +
+                "volumengewichteter Preis basierend auf Echtzeit-Marktdaten, übersetzt in USD = " + model.getPriceUsd() + "\n" +
+                "die Richtung und der Wert ändern sich in den letzten 24 Stunden = " + model.getChangePercent24Hr() + "\n" +
+                "Средневзвешанная цена за последние 24 часа = " + model.getVwap24Hr() + "\n";
     }
 
     public void sendGermany(Message message, Model model) {

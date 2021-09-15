@@ -11,11 +11,15 @@ class EnglishSender extends Information {
 
     @Override
     String getText(Model model) {
-        return "The lower limit of the value of the instrument in this candle = " + model.getName() + "\n" +
-                "The upper limit of the value of the instrument in this candle = " + model.getName() + "\n" +
-                "The price of the instrument at the time of opening this candle = " + model.getName() + "\n" +
-                "The price of the instrument at the close of this candle = " + model.getName() + "\n" +
-                "The opening time of this candle = " + model.getName() + "\n";
+        return "most common symbol = " + model.getSymbol() + "\n" +
+                "proper name for asset = " + model.getName() + "\n" +
+                "available supply for trading = " + model.getSupply() + "\n" +
+                "total quantity of asset issued = " + model.getMaxSupply() + "\n" +
+                "supply x price = " + model.getMarketCapUsd() + "\n" +
+                "quantity of trading volume represented in USD over the last 24 hours = " + model.getVolumeUsd24Hr() + "\n" +
+                "volume-weighted price based on real-time market data, translated to USD = " + model.getPriceUsd() + "\n" +
+                "the direction and value change in the last 24 hours = " + model.getChangePercent24Hr() + "\n" +
+                "Volume Weighted Average Price in the last 24 hours = " + model.getVwap24Hr() + "\n";
 
     }
 
@@ -41,5 +45,4 @@ class EnglishSender extends Information {
         }
     }
 }
-
 
