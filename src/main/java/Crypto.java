@@ -44,6 +44,8 @@ public class Crypto {
         model.setSupply(data.getDouble("supply"));
         if (data.isNull("maxSupply")) {
             model.setMaxSupply(0);
+        } else{
+            model.setMaxSupply(data.getDouble("maxSupply"));
         }
         model.setMarketCapUsd(data.getDouble("marketCapUsd"));
         model.setVolumeUsd24Hr(data.getDouble("volumeUsd24Hr"));
@@ -51,6 +53,8 @@ public class Crypto {
         model.setChangePercent24Hr(data.getDouble("changePercent24Hr"));
         if (data.isNull("vwap24Hr")) {
             model.setVwap24Hr(0);
+        } else {
+            model.setVwap24Hr(data.getDouble("vwap24Hr"));
         }
         return Container.languageContainer.get(idLanguage).getText(model);
     }

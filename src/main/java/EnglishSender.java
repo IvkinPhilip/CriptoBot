@@ -23,14 +23,14 @@ class EnglishSender extends Information {
 
     }
 
-    public void sendEnglish (Message message, Model model) {
+    public void sendEnglish(Message message, Model model) {
         if (message != null && message.hasText()) {
             switch (message.getText().toUpperCase()) {
                 case "INFORMATION":
                     sendText(message, "Information");
                     break;
                 case "LANGUAGE":
-                    sendText(message, "Choose language:\n" + TEXTLANGUAGE);
+                    sendText(message, "Choose language:\n" + Information.TEXTLANGUAGE);
                     break;
                 case "/START":
                     sendText(message, "Hello");

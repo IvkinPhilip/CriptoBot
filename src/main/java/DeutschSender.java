@@ -19,7 +19,7 @@ class DeutschSender extends Information {
                 "menge des in USD vertretenen Handelsvolumens in den letzten 24 Stunden = " + model.getVolumeUsd24Hr() + "\n" +
                 "volumengewichteter Preis basierend auf Echtzeit-Marktdaten, übersetzt in USD = " + model.getPriceUsd() + "\n" +
                 "die Richtung und der Wert ändern sich in den letzten 24 Stunden = " + model.getChangePercent24Hr() + "\n" +
-                "Средневзвешанная цена за последние 24 часа = " + model.getVwap24Hr() + "\n";
+                "Volumengewichteter Durchschnittspreis der letzten 24 Stunden = " + model.getVwap24Hr() + "\n";
     }
 
     public void sendGermany(Message message, Model model) {
@@ -29,7 +29,7 @@ class DeutschSender extends Information {
                     sendText(message, "Information");
                     break;
                 case "SPRANCHE":
-                    sendText(message, "Sprache auswählen:\n" + TEXTLANGUAGE);
+                    sendText(message, "Sprache auswählen:\n" + Information.TEXTLANGUAGE);
                     break;
                 default:
                     try {
